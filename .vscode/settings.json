@@ -1,0 +1,6 @@
+{
+    "go.formatTool": "default",
+    "[go]": { "editor.codeActionsOnSave": {
+            "source.organizeImports": "never"
+        }}
+}
