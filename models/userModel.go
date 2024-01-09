@@ -7,15 +7,15 @@ import (
 
 type User struct {
 	ID           primitive.ObjectID `bson:"_id"`
-	firstName    *string            `json: "firstName" validate:"required, min=2, max=100"`
-	lastName     *string            `json: "lastName" validate:"required, min=2, max=100"`
-	password     *string            `json: "password" validate:"required, min=6"`
-	email        *string            `json: "email" validate:"email, required"`
-	phone        *string            `json: "phone" validate:"required"`
-	token        *string            `json: "token"`
-	userType     *string            `json: "userType" validate:"required, eq=ADMIN|eq=USER"`
-	refreshToken *string            `json: "refreshToken"`
-	cratedAt     *time.Time         `json: "cratedAt"`
-	updatedAt    *time.Time         `json: "updatedAt"`
-	userId       string             `json: "userId"`
+	FirstName    *string            `json: "firstName" validate:"required, min=2, max=100"`
+	LastName     *string            `json: "lastName" validate:"required, min=2, max=100"`
+	Password     *string            `json: "password" validate:"required, min=6"`
+	Email        *string            `json: "email" validate:"email, required"`
+	Phone        *string            `json: "phone" validate:"required"`
+	Token        *string            `json: "token"`
+	UserType     *string            `json: "userType" validate:"required, eq=ADMIN|eq=USER"`
+	RefreshToken *string            `json: "refreshToken"`
+	CratedAt     time.Time          `json: "cratedAt"`
+	UpdatedAt    time.Time          `json: "updatedAt"`
+	UserId       string             `json: "userId"`
 }

@@ -3,28 +3,29 @@ package main
 import (
 	"github.com/gin-gonic/gin"
 	routes "github.com/mtoha/akhil/routes"
+	//"log"
 	"os"
 )
 
 func main() {
-	port = os.Getenv("PORT")
+	port := os.Getenv("PORT")
 
 	if port == "" {
 		port = "8000"
 	}
 
-	router := gin.new()
-	router.User(gin.Logger())
+	router := gin.New()
+	router.Use(gin.Logger())
 
 	routes.AuthRoutes(router)
 	routes.UserRoutes(router)
 
-	router.Get("/API-1", func(c *gin.Context) {
-		c.json(200, gin.H{"Success": "Access Granted for api-1"})
+	router.GET("/API-1", func(c *gin.Context) {
+		c.JSON(200, gin.H{"Success": "Access Granted for api-1"})
 	})
 
-	router.Get("/API-2", func(c *gin.Context) {
-		c.json(200, gin.H{"Success": "Access Granted for api-2"})
+	router.GET("/API-2", func(c *gin.Context) {
+		c.JSON(200, gin.H{"Success": "Access Granted for api-2"})
 	})
 
 	router.Run(":" + port)

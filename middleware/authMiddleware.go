@@ -3,6 +3,7 @@ package middleware
 import (
 	"fmt"
 	helper "github.com/mtoha/akhil/helper"
+	"log"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -24,7 +25,8 @@ func Authenticate() gin.HandlerFunc {
 			return
 		}
 
-		c.Set("email", claims.email)
+		log.Print("claims:", claims)
+		c.Set("email", claims.Email)
 		c.Set("first_name", claims.First_name)
 		c.Set("last name", claims.Last_name)
 		c.Set("uid", claims.Uid)
